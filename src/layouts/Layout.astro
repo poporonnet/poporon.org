@@ -1,0 +1,26 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Poporon Network" />
+    <title>Poporon Network</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="flex min-h-screen flex-col items-center bg-white p-6 font-serif text-black">
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
