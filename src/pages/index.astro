@@ -1,9 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Logo from '../../public/logo.svg?raw';
+import '../assets/logo.css';
 ---
 
 <Layout>
-  <p class="my-32 text-5xl">こヽに何を書くか決める</p>
+  <!-- <Logo class="my-32 h-10" /> -->
+  <div class="my-32 [&>svg]:h-10">
+    <Fragment set:html={Logo} />
+  </div>
   <div class="flex w-full flex-col items-center">
     <p class="my-1 text-xl font-bold">About</p>
     <p>Poporon Networkについて</p>
