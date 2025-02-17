@@ -4,7 +4,7 @@ import Header from '@components/Header.astro';
 import '@assets/tailwind.css';
 ---
 
-<html lang="ja">
+<html lang="ja" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -21,9 +21,9 @@ import '@assets/tailwind.css';
   </head>
   <body class="flex min-h-screen flex-col items-center bg-white px-6 pt-6 font-serif text-black">
     <Header />
-<main class="flex w-full flex-1 flex-col items-center gap-8 pb-6">
-    <slot />
-</main>
+    <main class="flex w-full flex-1 flex-col items-center gap-8 pb-6">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
