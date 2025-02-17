@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  icon: string;
+  name: string;
+  description: string;
+  github?: string;
+  twitter?: string;
+  website?: string;
+}
+
+const { icon, name, description, github, twitter, website } = Astro.props;
+---
+
+<div class="flex h-38 w-82 flex-row items-center gap-4 rounded-md border border-gray-300 px-2 py-5">
+  <img src={icon} alt={name} class="h-20 w-20 rounded-sm border border-gray-300 font-sans" />
+  <div class="flex h-full w-full flex-1 flex-col">
+    <p class="text-lg font-bold">{name}</p>
+    <p class="text-sm">{description}</p>
+    <div class="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-xs *:flex *:items-center *:gap-1">
+      {
+        github && (
+          <a href={`https://github.com/${github}`}>
+            <Icon name="tabler:brand-github" /> {github}
+          </a>
+        )
+      }
+      {
+        twitter && (
+          <a href={`https://twitter.com/${twitter}`}>
+            <Icon name="tabler:brand-twitter" /> {twitter}
+          </a>
+        )
+      }
+      {
+        website && (
+          <a href={`https://${website}`}>
+            <Icon name="tabler:home" /> {website}
+          </a>
+        )
+      }
+    </div>
+  </div>
+</div>
