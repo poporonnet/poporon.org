@@ -1,25 +1,76 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Logo from '../../public/logo.svg?raw';
-import '../assets/logo.css';
+import Layout from '@layouts/Layout.astro';
+import Section from '@components/home/Section.astro';
+import Table from '@components/home/Table.astro';
+import BlogCard from '@components/home/BlogCard.astro';
+import MemberCard from '@components/home/MemberCard.astro';
+import Banner from '@components/home/Banner.astro';
 ---
 
 <Layout>
-  <div class="my-32 [&>svg]:h-10">
-    <Fragment set:html={Logo} />
+  <Banner />
+  <div class="text-center text-xl">
+    Poporon Networkは組み込みから<br />
+    Webフロントエンドまで幅広く活動している<br />
+    技術趣味人によるサークルです．
   </div>
-  <div class="flex w-full flex-col items-center">
-    <p class="my-1 text-xl font-bold">About</p>
-    <p>Poporon Networkについて</p>
-    <hr class="my-2 h-px w-3/4 max-w-160 border-0 bg-gray-300" />
-    <table class="my-4 table-auto border-separate border-spacing-x-5 [&_td]:p-0.25">
-      <tr>
-        <td>団体名</td><td>Poporon Network ( 読み: ポポロン ネットワーク )</td>
-      </tr>
-      <tr><td>代表</td><td>定めなし</td></tr>
-      <tr><td>設立年月日</td><td>2022年 12月4日</td></tr>
-      <tr><td>メンバー数</td><td>8人 ( 2024年 5月現在 )</td></tr>
-      <tr><td>活動場所</td><td>オンライン ( Discord )</td></tr>
-    </table>
-  </div>
+  <Section title="About" details="Poporon Network について">
+    <Table
+      data={[
+        ['団体名', 'Poporon Network ( 読み: ポポロン ネットワーク )'],
+        ['代表', '定めなし'],
+        ['設立年月日', '2022年 12月4日'],
+        ['メンバー数', '8人 ( 2024年 5月現在 )'],
+        ['活動場所', 'オンライン ( Discord )'],
+      ]}
+    />
+    <p class="mt-6 text-lg">沿革</p>
+    <Table
+      data={[
+        ['2022. Dec. 4', '設立 ( P0p0r0n Netw0rk として )'],
+        [
+          '2023. Mar. 16',
+          '中国地区高専コンピュータフェスティバルに参加\n( Po²ron Network として )',
+        ],
+        ['2023. Apr. 21', '活動方針が決定される\n名称が Poporon Network に定まる'],
+        ['2023. Apr. 22', 'Discord サーバ開設'],
+        ['2024. Jan. 6', '第1回Matz葉がにロボコン 運営支援システムを開発\n大会運営に協力'],
+        ['2024. Oct. 25', '第1回どじょうすくいロボコン 運営支援システムを開発\n大会運営に協力'],
+        ['2025. Jan. 12', '第2回Matz葉がにロボコン 運営支援システムを開発\n大会運営に協力'],
+      ]}
+    />
+  </Section>
+  <Section title="Blog" details="メンバーによるブログ">
+    <div class="flex flex-wrap justify-center gap-4">
+      {
+        [...Array(3)].map(() => (
+          <BlogCard
+            href="/blog/123"
+            image="https://laminne33569.net/kcms.png"
+            date="Apr. 20 2025"
+            author="laminne"
+            title="NGNを使っていい感じのネットワークを構築する"
+            description='Poporon Networkの新しいプロジェクトとして"Poporon Open Network"を開始しました。'
+            tags={['ネットワーク', '活動報告']}
+          />
+        ))
+      }
+    </div>
+  </Section>
+  <Section title="Members" details="メンバー紹介">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      {
+        [...Array(7)].map(() => (
+          <MemberCard
+            icon="https://avatars.githubusercontent.com/laminne"
+            name="Cotori Yamamoto"
+            description="国人領主"
+            github="laminne"
+            twitter="laminne33"
+            website="laminne33569.net"
+          />
+        ))
+      }
+    </div>
+  </Section>
 </Layout>
