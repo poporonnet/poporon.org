@@ -13,8 +13,14 @@ interface Props {
 const { icon, name, description, github, twitter, website } = Astro.props;
 ---
 
-<div class="flex h-38 w-82 items-center gap-4 rounded-md border border-gray-300 px-2 py-5">
-  <img src={icon} alt={name} class="h-20 w-20 rounded-sm border border-gray-300 font-sans" />
+<div
+  class="flex aspect-16/7 w-80 max-w-full items-center gap-4 rounded-md border border-gray-300 px-2 py-5"
+>
+  <img
+    src={icon}
+    alt={name}
+    class="aspect-square w-20 rounded-sm border border-gray-300 font-sans"
+  />
   <div class="flex h-full w-full flex-1 flex-col">
     <p class="text-lg font-bold">{name}</p>
     <p class="text-sm">{description}</p>
