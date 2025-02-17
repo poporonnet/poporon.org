@@ -1,7 +1,7 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import '../assets/tailwind.css';
+import Footer from '@components/Footer.astro';
+import Header from '@components/Header.astro';
+import '@assets/tailwind.css';
 ---
 
 <html lang="ja">
@@ -19,9 +19,11 @@ import '../assets/tailwind.css';
       rel="stylesheet"
     />
   </head>
-  <body class="flex min-h-screen flex-col items-center bg-white p-6 font-serif text-black">
+  <body class="flex min-h-screen flex-col items-center bg-white px-6 pt-6 font-serif text-black">
     <Header />
+<main class="flex w-full flex-1 flex-col items-center gap-8 pb-6">
     <slot />
+</main>
     <Footer />
   </body>
 </html>
