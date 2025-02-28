@@ -1,4 +1,6 @@
 ---
+import AutoBreak from '@components/AutoBreak.astro';
+
 interface Props {
   data: string[][];
 }
@@ -8,19 +10,16 @@ const { data } = Astro.props;
 
 <table class="table-auto border-separate border-spacing-x-5 [&_td]:p-0.25 [&_td]:align-text-top">
   {
-    data.map((row): astroHTML.JSX.HTMLAttributes => {
-      const cells = row.map((cell) =>
-        cell
-          .split('\n')
-          .flatMap((s): astroHTML.JSX.HTMLAttributes[] => [<Fragment set:text={s} />, <br />])
-      );
-      return (
+    data.map(
+      (row): astroHTML.JSX.HTMLAttributes => (
         <tr>
-          {cells.map((cell) => (
-            <td>{cell}</td>
+          {row.map((cell) => (
+            <td>
+              <AutoBreak text={cell} />
+            </td>
           ))}
         </tr>
-      );
-    })
+      )
+    )
   }
 </table>
