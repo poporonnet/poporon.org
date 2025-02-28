@@ -1,0 +1,32 @@
+---
+import BlogTag from './BlogTag.astro';
+
+interface Props {
+  href: string;
+  image: string;
+  date: string;
+  author: string;
+  title: string;
+  description: string;
+  tags: string[];
+}
+
+const { href, image, date, author, title, description, tags } = Astro.props;
+---
+
+<a
+  href={href}
+  class="items-left flex aspect-4/5 w-68 flex-col gap-1 rounded-md border border-gray-300 p-3 font-sans shadow hover:bg-gray-50 active:bg-gray-100"
+>
+  <img
+    src={image}
+    alt={title}
+    class="mx-auto aspect-video w-full rounded-md border-gray-100 bg-slate-100 object-cover"
+  />
+  <p class="text-sm">{date} {author}</p>
+  <p class="text-xl underline">{title}</p>
+  <p class="line-clamp-3 text-sm text-gray-800">{description}</p>
+  <div class="flex gap-2">
+    {tags.map((tag) => <BlogTag tag={tag} />)}
+  </div>
+</a>
