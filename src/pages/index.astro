@@ -2,10 +2,7 @@
 import Layout from '@layouts/Layout.astro';
 import Section from '@components/home/Section.astro';
 import Table from '@components/home/Table.astro';
-import BlogCard from '@components/home/BlogCard.astro';
-import MemberCard from '@components/home/MemberCard.astro';
 import Banner from '@components/home/Banner.astro';
-import WorkCard from '@components/home/WorkCard.astro';
 ---
 
 <Layout>
@@ -42,40 +39,35 @@ import WorkCard from '@components/home/WorkCard.astro';
     />
   </Section>
   <Section title="Blog" details="メンバーによるブログ">
-    <div class="flex flex-wrap justify-center gap-4">
-      {
-        [...Array(3)].map(() => (
-          <BlogCard
-            href="/blog/123"
-            image="https://laminne33569.net/kcms.png"
-            date="Apr. 20 2025"
-            author="laminne"
-            title="NGNを使っていい感じのネットワークを構築する"
-            description='Poporon Networkの新しいプロジェクトとして"Poporon Open Network"を開始しました。'
-            tags={['ネットワーク', '活動報告']}
-          />
-        ))
-      }
-    </div>
+    <p class="text-gray-600 italic">Coming soon...</p>
+    <!-- <div class="flex flex-wrap justify-center gap-4">
+      <BlogCard
+        href="/blog/123"
+        image="https://laminne33569.net/kcms.png"
+        date="Apr. 20 2025"
+        author="laminne"
+        title="NGNを使っていい感じのネットワークを構築する"
+        description='Poporon Networkの新しいプロジェクトとして"Poporon Open Network"を開始しました。'
+        tags={['ネットワーク', '活動報告']}
+      />
+    </div> -->
   </Section>
   <Section title="Members" details="メンバー紹介">
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-      {
-        [...Array(7)].map(() => (
-          <MemberCard
-            icon="https://avatars.githubusercontent.com/laminne"
-            name="Cotori Yamamoto"
-            description="国人領主"
-            github="laminne"
-            twitter="laminne33"
-            website="laminne33569.net"
-          />
-        ))
-      }
-    </div>
+    <p class="text-gray-600 italic">Coming soon...</p>
+    <!-- <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <MemberCard
+        icon="https://avatars.githubusercontent.com/laminne"
+        name="Cotori Yamamoto"
+        description="国人領主"
+        github="laminne"
+        twitter="laminne33"
+        website="laminne33569.net"
+      />
+    </div> -->
   </Section>
   <Section title="Works" details="過去の制作物">
-    <div class="flex flex-col items-center gap-4">
+    <p class="text-gray-600 italic">Coming soon...</p>
+    <!-- <div class="flex flex-col items-center gap-4">
       <WorkCard
         title="kcmsx"
         subtitle={'Matz葉がにロボコン\n大会運営システム'}
@@ -83,6 +75,6 @@ import WorkCard from '@components/home/WorkCard.astro';
         description={'小学生向けロボコン大会の運営支援・得点管理を行うシステム.\n企画・開発・当日運用のすべてを担当.'}
         github="poporonnet/kcmsx"
       />
-    </div>
+    </div> -->
   </Section>
 </Layout>
