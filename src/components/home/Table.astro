@@ -1,0 +1,25 @@
+---
+import AutoBreak from '@components/AutoBreak.astro';
+
+interface Props {
+  data: string[][];
+}
+
+const { data } = Astro.props;
+---
+
+<table class="table-auto border-separate border-spacing-x-5 [&_td]:p-0.25 [&_td]:align-text-top">
+  {
+    data.map(
+      (row): astroHTML.JSX.HTMLAttributes => (
+        <tr>
+          {row.map((cell) => (
+            <td>
+              <AutoBreak text={cell} />
+            </td>
+          ))}
+        </tr>
+      )
+    )
+  }
+</table>

@@ -1,10 +1,10 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import '../assets/tailwind.css';
+import Footer from '@components/Footer.astro';
+import Header from '@components/Header.astro';
+import '@assets/tailwind.css';
 ---
 
-<html lang="ja">
+<html lang="ja" class="scroll-pt-8 scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -15,13 +15,15 @@ import '../assets/tailwind.css';
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Noto+Sans+JP@400;700&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body class="flex min-h-screen flex-col items-center bg-white p-6 font-serif text-black">
+  <body class="flex min-h-screen flex-col items-center bg-white px-6 pt-6 font-serif text-black">
     <Header />
-    <slot />
+    <main class="flex w-full flex-1 flex-col items-center gap-8 pb-6">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
