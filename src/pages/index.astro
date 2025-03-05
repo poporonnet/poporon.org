@@ -78,6 +78,14 @@ import MemberCard from '@components/home/MemberCard.astro';
         github="tufusa"
         twitter="louptung"
         website="tufusa.net"
+        class={{
+          container: `transition-all duration-1000 hover:bg-[#121222]
+            hover:text-white hover:[&_img]:rounded-[100%]
+            hover:[&_.text-lg]:text-[#ff67a5] hover:[&_.text-lg]:duration-1000
+            `,
+          name: 'transition-all duration-100',
+          icon: 'transition-all duration-1000',
+        }}
       />
       <MemberCard
         icon="https://github.com/teselapfer.png"
@@ -91,7 +99,7 @@ import MemberCard from '@components/home/MemberCard.astro';
         description="普通自動二輪"
         github="speak-mentaiko"
         twitter="speak_mentaiko"
-        website='mentaiko.net'
+        website="mentaiko.net"
       />
     </div>
   </Section>
