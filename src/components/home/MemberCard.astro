@@ -8,22 +8,27 @@ interface Props {
   github?: string;
   twitter?: string;
   website?: string;
+  class?: {
+    container?: string;
+    icon?: string;
+    name?: string;
+  };
 }
 
-const { icon, name, description, github, twitter, website } = Astro.props;
+const { icon, name, description, github, twitter, website, class: className } = Astro.props;
 ---
 
 <div
-  class="flex aspect-16/7 w-80 max-w-full items-center gap-4 rounded-md border border-gray-300 px-2 py-4"
+  class={`flex aspect-16/7 w-80 max-w-full items-center gap-4 rounded-md border border-gray-300 px-2 py-4 ${className?.container ?? ''}`}
 >
   <img
     src={icon}
     alt={name}
-    class="aspect-square w-20 rounded-sm border border-gray-300 font-sans"
+    class={`aspect-square w-20 rounded-sm border border-gray-300 font-sans ${className?.icon ?? ''}`}
   />
   <div class="flex h-full w-full flex-1 flex-col justify-between">
     <div>
-      <p class="text-lg font-bold">{name}</p>
+      <p class={`text-lg font-bold ${className?.name ?? ''}`}>{name}</p>
       <p class="text-sm">{description}</p>
     </div>
     <div class="flex flex-wrap gap-x-8 gap-y-2 text-xs *:flex *:items-center *:gap-1">
