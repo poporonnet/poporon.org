@@ -3,6 +3,7 @@ import Layout from '@layouts/Layout.astro';
 import Section from '@components/home/Section.astro';
 import Table from '@components/home/Table.astro';
 import Banner from '@components/home/Banner.astro';
+import MemberCard from '@components/home/MemberCard.astro';
 ---
 
 <Layout>
@@ -54,17 +55,45 @@ import Banner from '@components/home/Banner.astro';
     </div> -->
   </Section>
   <Section title="Members" details="メンバー紹介">
-    <p class="text-gray-600 italic">Coming soon...</p>
-    <!-- <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <MemberCard
-        icon="https://avatars.githubusercontent.com/laminne"
+        icon="https://github.com/laminne.png"
         name="Cotori Yamamoto"
         description="国人領主"
         github="laminne"
         twitter="laminne33"
         website="laminne33569.net"
       />
-    </div> -->
+      <MemberCard
+        icon="https://github.com/kiharu3112.png"
+        name="namekujitoiisyoubusiteru"
+        description="domestic animals"
+        github="kiharu3112"
+        twitter="kijiharu_mct"
+      />
+      <MemberCard
+        icon="https://github.com/tufusa.png"
+        name="tufusa"
+        description="型パズル士4級"
+        github="tufusa"
+        twitter="louptung"
+        website="tufusa.net"
+      />
+      <MemberCard
+        icon="https://github.com/teselapfer.png"
+        name="Teselapfer"
+        description="マンホールから抜け出せません"
+        github="Teselapfer"
+      />
+      <MemberCard
+        icon="https://github.com/speak-mentaiko.png"
+        name="speak-mentaiko"
+        description="普通自動二輪"
+        github="speak-mentaiko"
+        twitter="speak_mentaiko"
+        website='mentaiko.net'
+      />
+    </div>
   </Section>
   <Section title="Works" details="過去の制作物">
     <p class="text-gray-600 italic">Coming soon...</p>
