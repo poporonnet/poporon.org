@@ -31,25 +31,25 @@ const { icon, name, description, github, twitter, website, class: className } = 
       <p class={`text-lg font-bold ${className?.name ?? ''}`}>{name}</p>
       <p class="text-sm">{description}</p>
     </div>
-    <div class="flex flex-wrap gap-x-8 gap-y-2 text-xs *:flex *:items-center *:gap-1">
+    <div class="flex flex-wrap gap-x-8 gap-y-2 text-xs">
       {
         github && (
           <a href={`https://github.com/${github}`}>
-            <Icon name="tabler:brand-github" /> {github}
+            <Icon name="tabler:brand-github" class="inline-block" /> {github}
           </a>
         )
       }
       {
         twitter && (
           <a href={`https://twitter.com/${twitter}`}>
-            <Icon name="tabler:brand-twitter" /> {twitter}
+            <Icon name="tabler:brand-twitter" class="inline-block" /> {twitter}
           </a>
         )
       }
       {
         website && (
           <a href={`https://${website}`}>
-            <Icon name="tabler:home" /> {website}
+            <Icon name="tabler:home" class="inline-block" /> {website}
           </a>
         )
       }
