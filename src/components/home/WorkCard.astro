@@ -8,10 +8,12 @@ interface Props {
   subtitle: string;
   description: string;
   github?: string | Array<string>;
+  siteLink?: string | Array<string>;
 }
 
-const { image, title, subtitle, description, github } = Astro.props;
+const { image, title, subtitle, description, github, siteLink } = Astro.props;
 const githubLinks = typeof github === 'string' ? [github] : (github ?? []);
+const siteLinks = typeof siteLink === 'string' ? [siteLink] : (siteLink ?? []);
 ---
 
 <div
@@ -27,6 +29,15 @@ const githubLinks = typeof github === 'string' ? [github] : (github ?? []);
         githubLinks.map((link) => (
           <a href={`https://github.com/${link}`}>
             <Icon name="tabler:brand-github" class="inline-block" /> {link}
+          </a>
+        ))
+      }
+    </div>
+    <div class="flex flex-col items-start pt-2 text-xs">
+      {
+        siteLinks && siteLinks.map((link) => (
+          <a href={`https://github.com/${link}`}>
+            <Icon name="tabler:external-link" class="inline-block" /> {link}
           </a>
         ))
       }
