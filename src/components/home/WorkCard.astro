@@ -27,7 +27,7 @@ const siteLinks = typeof siteLink === 'string' ? [siteLink] : (siteLink ?? []);
     <div class="flex flex-col items-start pt-2 text-xs">
       {
         githubLinks.map((link) => (
-          <a href={`https://github.com/${link}`}>
+          <a href={`https://github.com/${link}`} target="_blank">
             <Icon name="tabler:brand-github" class="inline-block" /> {link}
           </a>
         ))
@@ -36,7 +36,7 @@ const siteLinks = typeof siteLink === 'string' ? [siteLink] : (siteLink ?? []);
     <div class="flex flex-col items-start pt-2 text-xs">
       {
         siteLinks && siteLinks.map((link) => (
-          <a href={`https://github.com/${link}`}>
+          <a href={link} target="_blank">
             <Icon name="tabler:external-link" class="inline-block" /> {link}
           </a>
         ))
