@@ -11,9 +11,9 @@ interface Props {
   site?: string | Array<string>;
 }
 
-const { image, title, subtitle, description, github, site: siteLink } = Astro.props;
+const { image, title, subtitle, description, github, site } = Astro.props;
 const githubLinks = typeof github === 'string' ? [github] : (github ?? []);
-const siteLinks = typeof siteLink === 'string' ? [siteLink] : (siteLink ?? []);
+const siteLinks = typeof site === 'string' ? [site] : (site ?? []);
 ---
 
 <div
