@@ -11,7 +11,7 @@ interface Props {
   site?: string | Array<string>;
 }
 
-const { image, title, subtitle, description, github, siteLink } = Astro.props;
+const { image, title, subtitle, description, github, site: siteLink } = Astro.props;
 const githubLinks = typeof github === 'string' ? [github] : (github ?? []);
 const siteLinks = typeof siteLink === 'string' ? [siteLink] : (siteLink ?? []);
 ---
@@ -19,7 +19,7 @@ const siteLinks = typeof siteLink === 'string' ? [siteLink] : (siteLink ?? []);
 <div
   class="flex flex-col justify-start gap-4 rounded-md border border-gray-300 px-6 py-4 sm:aspect-8/3 sm:h-64 sm:flex-row"
 >
-  <img src={image} class="w-70 self-center object-contain shadow" />
+  <img src={image} class="w-70 h-60 self-center object-contain" />
   <div class="flex flex-1 flex-col gap-2">
     <p class="text-2xl font-bold">{title}</p>
     <p class="text-xl"><AutoBreak text={subtitle} /></p>
@@ -32,14 +32,13 @@ const siteLinks = typeof siteLink === 'string' ? [siteLink] : (siteLink ?? []);
           </a>
         ))
       }
-    </div>
-    <div class="flex flex-col items-start pt-2 text-xs">
       {
-        siteLinks && siteLinks.map((link) => (
-          <a href={link} target="_blank">
-            <Icon name="tabler:external-link" class="inline-block" /> {link}
-          </a>
-        ))
+        siteLinks &&
+          siteLinks.map((link) => (
+            <a href={link} target="_blank">
+              <Icon name="tabler:external-link" class="inline-block" /> {link}
+            </a>
+          ))
       }
     </div>
   </div>
