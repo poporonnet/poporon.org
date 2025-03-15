@@ -3,8 +3,8 @@ import Layout from '@layouts/Layout.astro';
 import Section from '@components/home/Section.astro';
 import Table from '@components/home/Table.astro';
 import Banner from '@components/home/Banner.astro';
-import MemberCard from '@components/home/MemberCard.astro';
 import WorkCard from '@components/home/WorkCard.astro';
+import MemberContentCard from '@components/home/MemberContentCard.astro';
 ---
 
 <Layout>
@@ -57,28 +57,11 @@ import WorkCard from '@components/home/WorkCard.astro';
   </Section>
   <Section title="Members" details="メンバー紹介">
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-      <MemberCard
-        icon="https://github.com/laminne.png"
-        name="Cotori Yamamoto"
-        description="国人領主"
-        github="laminne"
-        twitter="laminne33"
-        website="laminne33569.net"
-      />
-      <MemberCard
-        icon="https://github.com/kiharu3112.png"
-        name="namekujitoiisyoubusiteru"
-        description="domestic animals"
-        github="kiharu3112"
-        twitter="kijiharu_mct"
-      />
-      <MemberCard
-        icon="https://github.com/tufusa.png"
-        name="tufusa"
+      <MemberContentCard id="laminne" description="国人領主" />
+      <MemberContentCard id="namekujitoiisyoubusiteru" description="domestic animals" />
+      <MemberContentCard
+        id="tufusa"
         description="型パズル士4級"
-        github="tufusa"
-        twitter="louptung"
-        website="tufusa.net"
         class={{
           container: `transition-all duration-1000 hover:bg-[#121222]
             hover:text-white hover:[&_img]:rounded-[100%]
@@ -88,20 +71,8 @@ import WorkCard from '@components/home/WorkCard.astro';
           icon: 'transition-all duration-1000',
         }}
       />
-      <MemberCard
-        icon="https://github.com/teselapfer.png"
-        name="Teselapfer"
-        description="マンホールから抜け出せません"
-        github="Teselapfer"
-      />
-      <MemberCard
-        icon="https://github.com/speak-mentaiko.png"
-        name="speak-mentaiko"
-        description="普通自動二輪"
-        github="speak-mentaiko"
-        twitter="speak_mentaiko"
-        website="mentaiko.net"
-      />
+      <MemberContentCard id="Teselapfer" description="マンホールから抜け出せません" />
+      <MemberContentCard id="speak-mentaiko" description="普通自動二輪" />
     </div>
   </Section>
   <Section title="Works" details="過去の制作物">

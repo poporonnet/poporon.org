@@ -1,0 +1,26 @@
+---
+import { getEntry } from 'astro:content';
+import MemberCard from './MemberCard.astro';
+import type { ComponentProps } from 'astro/types';
+
+interface Props {
+  id: string;
+  description: string;
+  class?: ComponentProps<typeof MemberCard>['class'];
+}
+
+const { id, description, class: classes } = Astro.props;
+const member = await getEntry('members', id);
+
+if (!member) throw new Error(`No such member: ${id}`);
+---
+
+<MemberCard
+  icon={member.data.icon}
+  name={member.data.name}
+  description={description}
+  github={member.data.github}
+  twitter={member.data.twitter}
+  website={member.data.website}
+  class={classes}
+/>

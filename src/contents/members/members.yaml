@@ -1,0 +1,31 @@
+- id: laminne
+  name: laminne
+  icon: https://github.com/laminne.png
+  github: laminne
+  twitter: laminne33
+  website: laminne33569.net
+
+- id: namekujitoiisyoubusiteru
+  name: namekujitoiisyoubusiteru
+  icon: https://github.com/kiharu3112.png
+  github: kiharu3112
+  twitter: kijiharu_mct
+
+- id: tufusa
+  name: tufusa
+  icon: https://github.com/tufusa.png
+  github: tufusa
+  twitter: louptung
+  website: tufusa.net
+
+- id: Teselapfer
+  name: Teselapfer
+  icon: https://github.com/teselapfer.png
+  github: Teselapfer
+
+- id: speak-mentaiko
+  name: speak-mentaiko
+  icon: https://github.com/speak-mentaiko.png
+  github: speak-mentaiko
+  twitter: speak_mentaiko
+  website: mentaiko.net
