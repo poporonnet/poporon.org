@@ -4,43 +4,18 @@ import BlogCard from '../components/blog/BlogCard.astro';
 ---
 
 <Layout>
-  <h2 class="top-2 text-2xl font-sans">ブログ</h2>
+  <div class="mt-12">
+    <p class="content-start font-sans text-2xl mb-8">ブログ</p>
 
-  <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
-    <BlogCard
-      authorName="laminne"
-      authorIconURL="https://github.com/laminne.png"
-      createdAt="Apr. 20 2025"
-      coverImageURL="https://laminne33569.net/kcms.png"
-      tags={['ネットワーク', '活動報告']}
-      title="あいうえおかきくけこあいうえおかきくけこあいうえおかきくけこあいうえおかきくけこ"
-    />
-    <BlogCard
-      authorName="laminne"
-      authorIconURL="https://github.com/laminne.png"
-      createdAt="Apr. 20 2025"
-      coverImageURL="https://laminne33569.net/kcms.png"
-      tags={['ネットワーク', '活動報告']}
-      title="あいうえおかきくけこ"
-    />
-    <BlogCard
-      authorName="laminne"
-      authorIconURL="https://github.com/laminne.png"
-      createdAt="Apr. 20 2025"
-      coverImageURL="https://laminne33569.net/kcms.png"
-      tags={['ネットワーク', '活動報告']}
-      title="あいうえおかきくけこ"
-    />
-    <BlogCard
-      authorName="laminne"
-      authorIconURL="https://github.com/laminne.png"
-      createdAt="Apr. 20 2025"
-      coverImageURL="https://laminne33569.net/kcms.png"
-      tags={['ネットワーク', '活動報告']}
-      title="あいうえおかきくけこ"
-    />
-
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+      <BlogCard
+        authorName="laminne"
+        authorIconURL="https://github.com/laminne.png"
+        createdAt="Apr. 20 2025"
+        coverImageURL="https://laminne33569.net/kcms.png"
+        tags={['ネットワーク', '活動報告']}
+        title="あいうえおかきくけこあいうえおかきくけこあいうえおかきくけこあいうえおかきくけこ"
+      />
+    </div>
   </div>
-
-
 </Layout>

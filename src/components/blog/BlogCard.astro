@@ -12,22 +12,27 @@ interface Props {
 const { title, coverImageURL, authorName, authorIconURL, createdAt, tags } = Astro.props;
 ---
 
-<div class="flex h-60 rounded-md font-sans">
+<div class="items-left flex aspect-3/1 flex-col rounded-md font-sans xl:h-48 xl:flex-row">
   <img
     src={coverImageURL}
     loading="lazy"
     alt={title}
-    class="m-auto ml-1 aspect-auto h-full rounded border border-gray-300 object-center"
+    class="ml-1 aspect-video w-full rounded border border-gray-300 object-contain xl:aspect-8/5 xl:h-full xl:w-auto"
   />
 
-  <div class="m-auto ml-8 mr-2 flex h-full flex-col justify-around">
+  <div class="mx-auto mr-2 ml-6 flex h-full flex-col justify-around">
     <div class="flex flex-row items-center gap-2">
-      <img src={authorIconURL} loading="lazy" alt={authorName} class="h-10 rounded-full border border-gray-300" />
+      <img
+        src={authorIconURL}
+        loading="lazy"
+        alt={authorName}
+        class="h-5 rounded-full border border-gray-300"
+      />
       <p class="text-sm">{authorName}</p>
     </div>
 
     <div>
-      <h2 class="text-xl underline">{title}</h2>
+      <h2 class="line-clamp-3 text-xl underline">{title}</h2>
       <p class="text-sm">{createdAt}</p>
     </div>
 
