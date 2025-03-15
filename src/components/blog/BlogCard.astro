@@ -12,32 +12,36 @@ interface Props {
 const { title, coverImageURL, authorName, authorIconURL, createdAt, tags } = Astro.props;
 ---
 
-<div class="items-left flex aspect-3/1 flex-col rounded-md font-sans xl:h-48 xl:flex-row">
+<div class="flex flex-col justify-start gap-4 font-sans xl:aspect-3/1 xl:flex-row xl:gap-6">
   <img
     src={coverImageURL}
     loading="lazy"
     alt={title}
-    class="ml-1 aspect-video w-full rounded border border-gray-300 object-contain xl:aspect-8/5 xl:h-full xl:w-auto"
+    class="aspect-video rounded border border-gray-300 object-contain xl:aspect-8/5"
   />
 
-  <div class="mx-auto mr-2 ml-6 flex h-full flex-col justify-around">
-    <div class="flex flex-row items-center gap-2">
+  <div class="flex flex-col justify-between gap-2">
+    <div class="flex gap-2">
       <img
         src={authorIconURL}
         loading="lazy"
         alt={authorName}
-        class="h-5 rounded-full border border-gray-300"
+        class="size-5 rounded-full border border-gray-300"
       />
       <p class="text-sm">{authorName}</p>
     </div>
 
     <div>
-      <h2 class="line-clamp-3 text-xl underline">{title}</h2>
+      <a
+        href=""
+        class="line-clamp-3 text-lg underline decoration-from-font underline-offset-2 xl:text-xl"
+        >{title}</a
+      >
       <p class="text-sm">{createdAt}</p>
     </div>
 
     <div class="flex gap-2">
-      {tags.map((v) => <BlogTag tag={v} />)}
+      {tags.map((tag) => <BlogTag tag={tag} />)}
     </div>
   </div>
 </div>
