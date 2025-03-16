@@ -19,7 +19,7 @@ importers:
         version: 4.0.13(vite@6.2.2(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.7.0))
       astro:
         specifier: ^5.0.0
-        version: 5.5.1(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.35.0)(typescript@5.8.2)(yaml@2.7.0)
+        version: 5.5.2(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.35.0)(typescript@5.8.2)(yaml@2.7.0)
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
@@ -731,8 +731,8 @@ packages:
   astro-icon@1.1.5:
     resolution: {integrity: sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw==}
 
-  astro@5.5.1:
-    resolution: {integrity: sha512-1bA4e7lbGKO0eXcuXy6GV8wjsypdrOO6EPLP3l1rNddMdkmj67VlMjWUp/3bti+kOe46ocXxJDh7Ux2L77YWjQ==}
+  astro@5.5.2:
+    resolution: {integrity: sha512-SOTJxB8mqxe/KEYEJiLIot0YULiCffyfTEclwmdeaASitDJ7eLM/KYrJ9sx3U5hq9GVI17Z4Y0P/1T2aQ0ZN3A==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1578,8 +1578,8 @@ packages:
   package-manager-detector@0.2.11:
     resolution: {integrity: sha512-BEnLolu+yuz22S56CU1SUKq3XC3PkwD5wv4ikR4MfGvnRVcmzXR9DwSlW2fEamyTPyXHomBJRzgapeuBvRNzJQ==}
 
-  package-manager-detector@1.0.0:
-    resolution: {integrity: sha512-7elnH+9zMsRo7aS72w6MeRugTpdRvInmEB4Kmm9BVvPw/SLG8gXUGQ+4wF0Mys0RSWPz0B9nuBbDe8vFeA2sfg==}
+  package-manager-detector@1.1.0:
+    resolution: {integrity: sha512-Y8f9qUlBzW8qauJjd/eu6jlpJZsuPJm2ZAV0cDVd420o4EdpH5RPdoCv+60/TdJflGatr4sDfpAL6ArWZbM5tA==}
 
   parse-latin@7.0.0:
     resolution: {integrity: sha512-mhHgobPPua5kZ98EF4HWiH167JWBfl4pvAIXXdbaVohtK7a6YBOy56kvhCqduqyo/f3yrHFWmqmiMg/BkBkYYQ==}
@@ -2934,7 +2934,7 @@ snapshots:
       - debug
       - supports-color
 
-  astro@5.5.1(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.35.0)(typescript@5.8.2)(yaml@2.7.0):
+  astro@5.5.2(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.35.0)(typescript@5.8.2)(yaml@2.7.0):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
@@ -2973,7 +2973,7 @@ snapshots:
       neotraverse: 0.6.18
       p-limit: 6.2.0
       p-queue: 8.1.0
-      package-manager-detector: 1.0.0
+      package-manager-detector: 1.1.0
       picomatch: 4.0.2
       prompts: 2.4.2
       rehype: 13.0.2
@@ -4080,7 +4080,7 @@ snapshots:
     dependencies:
       quansync: 0.2.8
 
-  package-manager-detector@1.0.0: {}
+  package-manager-detector@1.1.0: {}
 
   parse-latin@7.0.0:
     dependencies:
