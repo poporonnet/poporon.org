@@ -5,6 +5,7 @@ import Banner from '@components/home/Banner.astro';
 import WorkCard from '@components/home/WorkCard.astro';
 import MemberContentCard from '@components/home/MemberContentCard.astro';
 import MainLayout from '@layouts/MainLayout.astro';
+import { formatDate } from 'src/utils/formatDate';
 ---
 
 <MainLayout title="Poporon Network" description="Poporon Network">
@@ -28,17 +29,14 @@ import MainLayout from '@layouts/MainLayout.astro';
     <p class="mt-6 text-lg">沿革</p>
     <Table
       data={[
-        ['2022. Dec. 4', '設立 ( P0p0r0n Netw0rk として )'],
-        [
-          '2023. Mar. 16',
-          '中国地区高専コンピュータフェスティバルに参加\n( Po²ron Network として )',
-        ],
-        ['2023. Apr. 21', '活動方針が決定される\n名称が Poporon Network に定まる'],
-        ['2023. Apr. 22', 'Discord サーバ開設'],
-        ['2024. Jan. 6', '第1回Matz葉がにロボコン 運営支援システムを開発\n大会運営に協力'],
-        ['2024. Oct. 25', '第1回どじょうすくいロボコン 運営支援システムを開発\n大会運営に協力'],
-        ['2025. Jan. 12', '第2回Matz葉がにロボコン 運営支援システムを開発\n大会運営に協力'],
-      ]}
+        ['2022/12/04', '設立 ( P0p0r0n Netw0rk として )'],
+        ['2023/03/16', '中国地区高専コンピュータフェスティバルに参加\n( Po²ron Network として )'],
+        ['2023/04/21', '活動方針が決定される\n名称が Poporon Network に定まる'],
+        ['2023/04/22', 'Discord サーバ開設'],
+        ['2024/01/06', '第1回Matz葉がにロボコン 運営支援システムを開発\n大会運営に協力'],
+        ['2024/10/25', '第1回どじょうすくいロボコン 運営支援システムを開発\n大会運営に協力'],
+        ['2025/01/12', '第2回Matz葉がにロボコン 運営支援システムを開発\n大会運営に協力'],
+      ].map(([date, ...rest]) => [formatDate(date), ...rest])}
     />
   </Section>
   <Section title="Blog" details="メンバーによるブログ">
