@@ -1,13 +1,13 @@
 ---
-import Layout from '@layouts/Layout.astro';
 import Section from '@components/home/Section.astro';
 import Table from '@components/home/Table.astro';
 import Banner from '@components/home/Banner.astro';
 import WorkCard from '@components/home/WorkCard.astro';
 import MemberContentCard from '@components/home/MemberContentCard.astro';
+import MainLayout from '@layouts/MainLayout.astro';
 ---
 
-<Layout>
+<MainLayout title="Poporon Network" description="Poporon Network">
   <Banner />
   <div class="text-center text-xl">
     Poporon Networkは組み込みから<br />
@@ -102,4 +102,4 @@ import MemberContentCard from '@components/home/MemberContentCard.astro';
       />
     </div>
   </Section>
-</Layout>
+</MainLayout>

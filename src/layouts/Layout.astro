@@ -2,6 +2,13 @@
 import Footer from '@components/Footer.astro';
 import Header from '@components/Header.astro';
 import '@assets/tailwind.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
 ---
 
 <html lang="ja" class="scroll-pt-8 scroll-smooth">
@@ -10,8 +17,8 @@ import '@assets/tailwind.css';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Poporon Network" />
-    <title>Poporon Network</title>
+    <meta name="description" content={description} />
+    <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,9 +28,7 @@ import '@assets/tailwind.css';
   </head>
   <body class="flex min-h-screen flex-col items-center bg-white px-6 pt-6 font-serif text-black">
     <Header />
-    <main class="flex w-full flex-1 flex-col items-center gap-8 pb-6">
-      <slot />
-    </main>
-    <Footer />
+          <slot />
+        <Footer />
   </body>
 </html>
