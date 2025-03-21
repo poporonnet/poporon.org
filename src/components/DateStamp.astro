@@ -1,0 +1,12 @@
+---
+import { formatDate } from 'src/utils/formatDate';
+
+interface Props {
+  date: Date | number | string;
+}
+
+const { date } = Astro.props;
+const dateString = formatDate(date);
+---
+
+<p>{dateString}</p>
