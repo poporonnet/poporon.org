@@ -19,7 +19,7 @@ importers:
         version: 4.1.4(vite@6.3.2(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.7.0))
       astro:
         specifier: ^5.0.0
-        version: 5.7.3(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.0)
+        version: 5.7.4(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.0)
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
@@ -748,8 +748,8 @@ packages:
   astro-icon@1.1.5:
     resolution: {integrity: sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw==}
 
-  astro@5.7.3:
-    resolution: {integrity: sha512-2b/OOS/A6GO4QP94x6oRzwTfXabFqE2rlUbbi42o6wZm9+zzcOc6VRFAq4lTOEI/iCrEVl3wTdBAC5X3h3Es+Q==}
+  astro@5.7.4:
+    resolution: {integrity: sha512-h+pndGOyoYbsBd0YvP7bL3gotUSlyltp8OLpcYg062w0n5c96wJ9xt/RmwwXzGbdcUjWFtw0c5z4zCA92NDmlA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2358,8 +2358,8 @@ packages:
     resolution: {integrity: sha512-AyeEbWOu/TAXdxlV9wmGcR0+yh2j3vYPGOECcIj2S7MkrLyC7ne+oye2BKTItt0ii2PHk4cDy+95+LshzbXnGg==}
     engines: {node: '>=12.20'}
 
-  yocto-spinner@0.2.1:
-    resolution: {integrity: sha512-lHHxjh0bXaLgdJy3cNnVb/F9myx3CkhrvSOEVTkaUgNMXnYFa2xYPVhtGnqhh3jErY2gParBOHallCbc7NrlZQ==}
+  yocto-spinner@0.2.2:
+    resolution: {integrity: sha512-21rPcM3e4vCpOXThiFRByX8amU5By1R0wNS8Oex+DP3YgC8xdU0vEJ/K8cbPLiIJVosSSysgcFof6s6MSD5/Vw==}
     engines: {node: '>=18.19'}
 
   yoctocolors@2.1.1:
@@ -3035,7 +3035,7 @@ snapshots:
       - debug
       - supports-color
 
-  astro@5.7.3(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.0):
+  astro@5.7.4(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.0):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
@@ -3092,7 +3092,7 @@ snapshots:
       vitefu: 1.0.6(vite@6.3.2(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.7.0))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
-      yocto-spinner: 0.2.1
+      yocto-spinner: 0.2.2
       zod: 3.24.3
       zod-to-json-schema: 3.24.5(zod@3.24.3)
       zod-to-ts: 1.2.0(typescript@5.8.3)(zod@3.24.3)
@@ -4935,7 +4935,7 @@ snapshots:
 
   yocto-queue@1.2.1: {}
 
-  yocto-spinner@0.2.1:
+  yocto-spinner@0.2.2:
     dependencies:
       yoctocolors: 2.1.1
 
