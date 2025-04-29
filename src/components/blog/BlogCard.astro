@@ -1,5 +1,6 @@
 ---
 import BlogTag from '../BlogTag.astro';
+import BlogAuthor from '../BlogAuthor.astro';
 interface Props {
   title: string;
   coverImageURL: string;
@@ -7,9 +8,10 @@ interface Props {
   authorIconURL: string;
   createdAt: string;
   tags: string[];
+  slug: string
 }
 
-const { title, coverImageURL, authorName, authorIconURL, createdAt, tags } = Astro.props;
+const { title, coverImageURL, authorName, authorIconURL, createdAt, tags, slug } = Astro.props;
 ---
 
 <div class="flex flex-col justify-start gap-4 font-sans xl:aspect-3/1 xl:flex-row xl:gap-6">
@@ -21,19 +23,11 @@ const { title, coverImageURL, authorName, authorIconURL, createdAt, tags } = Ast
   />
 
   <div class="flex flex-col justify-between gap-2">
-    <div class="flex gap-2">
-      <img
-        src={authorIconURL}
-        loading="lazy"
-        alt={authorName}
-        class="size-5 rounded-full border border-gray-300"
-      />
-      <p class="text-sm">{authorName}</p>
-    </div>
+    <BlogAuthor icon={authorIconURL} name={authorName}/>
 
     <div>
       <a
-        href=""
+        href={`/blog/${slug}`}
         class="line-clamp-3 text-lg underline decoration-from-font underline-offset-2 xl:text-xl"
         >{title}</a
       >
