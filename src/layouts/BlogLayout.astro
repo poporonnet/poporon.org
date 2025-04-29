@@ -1,0 +1,64 @@
+---
+import Layout from './Layout.astro';
+import type { CollectionEntry } from 'astro:content';
+import { getEntry } from 'astro:content';
+import BlogTags from '@components/BlogTags.astro';
+import BlogAuthor from '@components/BlogAuthor.astro';
+import DateStamp from '@components/DateStamp.astro';
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+}
+
+const { entry } = Astro.props;
+const { title, createdAt, author: authorEntry, cover, tags } = entry.data;
+const author = await getEntry(authorEntry);
+---
+
+<Layout title={title} description={title}>
+  <main class="flex w-full flex-1 flex-col items-center gap-8 pb-6">
+    <article class="my-2 h-full w-full max-w-200 font-sans">
+      <img src={cover} alt="カバー画像" class="mx-auto my-6 aspect-video object-contain" />
+
+      <p class="text-2xl lg:text-3xl">{title}</p>
+
+      <div class="my-3 flex flex-col gap-2">
+        <BlogTags tags={tags} />
+        <div class="flex gap-4 text-sm">
+          <DateStamp date={createdAt} />
+          <div class="flex gap-2">
+            <BlogAuthor name={author.data.name} icon={author.data.icon} />
+          </div>
+        </div>
+      </div>
+
+      <div
+        class={`
+          decoration-from-font
+          [&_p]:text-gray-800
+          [&_h1]:my-3 [&_h1]:text-2xl [&_h1]:lg:text-3xl
+          [&_h2]:my-3 [&_h2]:text-2xl [&_h2]:lg:text-3xl
+          [&_h3]:my-2 [&_h3]:text-xl [&_h3]:lg:text-2xl
+          [&_h4]:my-1 [&_h4]:text-lg [&_h4]:lg:text-xl
+          [&_p:has(img)]:my-8 [&_p:has(img)]:flex [&_p:has(img)]:flex-col 
+          [&_p:has(img)]:items-center [&_p:has(img)]:gap-1
+          [&_img]:mx-auto [&_img]:w-full [&_img]:max-h-100 [&_img]:max-w-125
+          [&_img+em]:text-sm [&_img+em]:not-italic [&_img+em]:text-gray-600
+          [&_blockquote]:my-2 [&_blockquote]:pl-1
+          [&_blockquote_p]:pl-2 [&_blockquote_p]:text-gray-500
+          [&_blockquote_p]:border-l-2 [&_blockquote_p]:border-gray-400
+          [&_li]:text-gray-800
+          [&_ol]:my-2 [&_ol]:list-decimal [&_ol]:list-inside
+          [&_ul]:my-2 [&_ul]:list-disc [&_ul]:list-inside
+          [&_li_ol]:my-0 [&_li_ol]:ml-5 [&_li_ol]:list-[lower-roman]
+          [&_li_ul]:my-0 [&_li_ul]:ml-5 [&_li_ul]:list-[circle]
+          [&_hr]:my-8
+          [&_a]:text-indigo-500 [&_a]:hover:underline
+          [&_pre]:my-4 [&_pre]:p-2 [&_pre]:rounded-md
+        `}
+      >
+        <slot />
+      </div>
+    </article>
+  </main>
+</Layout>
