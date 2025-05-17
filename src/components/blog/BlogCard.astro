@@ -1,0 +1,41 @@
+---
+import BlogTag from '../BlogTag.astro';
+import BlogAuthor from '../BlogAuthor.astro';
+interface Props {
+  title: string;
+  coverImageUrl: string;
+  authorName: string;
+  authorIconUrl: string;
+  createdAt: string;
+  tags: string[];
+  slug: string;
+}
+
+const { title, coverImageUrl, authorName, authorIconUrl, createdAt, tags, slug } = Astro.props;
+---
+
+<div class="flex flex-col justify-start gap-4 font-sans xl:aspect-3/1 xl:flex-row xl:gap-6">
+  <img
+    src={coverImageUrl}
+    loading="lazy"
+    alt={title}
+    class="aspect-video rounded border border-gray-300 object-contain xl:aspect-8/5"
+  />
+
+  <div class="flex flex-col justify-between gap-2">
+    <BlogAuthor icon={authorIconUrl} name={authorName} />
+
+    <div>
+      <a
+        href={`/blog/${slug}`}
+        class="line-clamp-3 text-lg underline decoration-from-font underline-offset-2 xl:text-xl"
+        >{title}</a
+      >
+      <p class="text-sm">{createdAt}</p>
+    </div>
+
+    <div class="flex gap-2">
+      {tags.map((tag) => <BlogTag tag={tag} />)}
+    </div>
+  </div>
+</div>
