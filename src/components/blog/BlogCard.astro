@@ -11,19 +11,19 @@ interface Props {
   slug: string;
 }
 
-const { title, coverImageURL, authorName, authorIconURL, createdAt, tags, slug } = Astro.props;
+const { title, coverImageUrl, authorName, authorIconUrl, createdAt, tags, slug } = Astro.props;
 ---
 
 <div class="flex flex-col justify-start gap-4 font-sans xl:aspect-3/1 xl:flex-row xl:gap-6">
   <img
-    src={coverImageURL}
+    src={coverImageUrl}
     loading="lazy"
     alt={title}
     class="aspect-video rounded border border-gray-300 object-contain xl:aspect-8/5"
   />
 
   <div class="flex flex-col justify-between gap-2">
-    <BlogAuthor icon={authorIconURL} name={authorName} />
+    <BlogAuthor icon={authorIconUrl} name={authorName} />
 
     <div>
       <a
