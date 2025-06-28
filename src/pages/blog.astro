@@ -6,6 +6,8 @@ import { getEntry } from 'astro:content';
 import { formatDate } from 'src/utils/formatDate';
 
 const posts = await getCollection('blog');
+// 新しい順にソート（降順）
+posts.sort((a, b) => new Date(b.data.createdAt).getTime() - new Date(a.data.createdAt).getTime());
 ---
 
 <Layout title="Blog | Poporon Network" description="Poporon Networkのメンバーによるブログ">
