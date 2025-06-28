@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import BlogCard from '../components/blog/BlogCard.astro';
 import { getCollection } from 'astro:content';
+import { getEntry } from 'astro:content';
+import { formatDate } from 'src/utils/formatDate';
 
 const posts = await getCollection('blog');
 ---
@@ -12,21 +14,20 @@ const posts = await getCollection('blog');
 
     <div class="mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2">
       {
-        posts.map((post) => (
-          <BlogCard
-            authorName={post.data.author.id}
-            authorIconUrl={`https://github.com/${post.data.author.id}.png`}
-            createdAt={post.data.createdAt.toLocaleDateString('ja-JP', {
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric',
-            })}
-            coverImageUrl={post.data.cover}
-            tags={post.data.tags}
-            title={post.data.title}
-            slug={post.id}
-          />
-        ))
+        posts.map(async (post) => {
+          const author = await getEntry(post.data.author);
+          return (
+            <BlogCard
+              authorName={author.data.name}
+              authorIconUrl={author.data.icon}
+              createdAt={formatDate(post.data.createdAt)}
+              coverImageUrl={post.data.cover}
+              tags={post.data.tags}
+              title={post.data.title}
+              slug={post.id}
+            />
+          );
+        })
       }
     </div>
   </div>
