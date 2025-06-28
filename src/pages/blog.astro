@@ -1,6 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-// import BlogCard from '../components/blog/BlogCard.astro';
+import BlogCard from '../components/blog/BlogCard.astro';
+import { getCollection } from 'astro:content';
+import { getEntry } from 'astro:content';
+import { formatDate } from 'src/utils/formatDate';
+
+const posts = await getCollection('blog');
+
+// 新しい順にソート(作成日時の降順)
+posts.sort((a, b) => b.data.createdAt.getTime() - a.data.createdAt.getTime());
 ---
 
 <Layout title="Blog | Poporon Network" description="Poporon Networkのメンバーによるブログ">
@@ -8,17 +16,22 @@ import Layout from '../layouts/Layout.astro';
     <p class="my-8 font-sans text-xl font-bold md:text-2xl">ブログ</p>
 
     <div class="mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2">
-      <!--
-      <BlogCard
-        authorName="laminne"
-        authorIconUrl="https://github.com/laminne.png"
-        createdAt="Apr. 20 2025"
-        coverImageUrl="https://laminne33569.net/kcms.png"
-        tags={['ネットワーク', '活動報告']}
-        title="あいうえおかきくけこあいうえおかきくけこあいうえおかきくけこあいうえおかきくけこ"
-        slug=""
-      />
-      -->
+      {
+        posts.map(async (post) => {
+          const author = await getEntry(post.data.author);
+          return (
+            <BlogCard
+              authorName={author.data.name}
+              authorIconUrl={author.data.icon}
+              createdAt={formatDate(post.data.createdAt)}
+              coverImageUrl={post.data.cover}
+              tags={post.data.tags}
+              title={post.data.title}
+              slug={post.id}
+            />
+          );
+        })
+      }
     </div>
   </div>
 </Layout>
