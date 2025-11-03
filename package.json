@@ -2,7 +2,7 @@
   "name": "poporon.net",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.20.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -24,6 +24,6 @@
   "devDependencies": {
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.14.0",
-    "prettier-plugin-tailwindcss": "^0.6.0"
+    "prettier-plugin-tailwindcss": "^0.7.0"
   }
 }
