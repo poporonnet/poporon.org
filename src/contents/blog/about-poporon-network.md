@@ -21,8 +21,7 @@ Poporon Networkは 組み込みからWebアプリケーションまで幅広く�
 
 ### 特徴
 
-- 
-
+ToDo
 
 ### 設立のきっかけ
 
@@ -57,4 +56,6 @@ Poporon Network の Network は"人的なネットワーク"という意味で�
 ## これまでの開発活動
 
 これまでに Poporon Network が開発したものについて，簡単に紹介します．
+
+ToDo
 
