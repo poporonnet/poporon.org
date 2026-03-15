@@ -56,4 +56,36 @@ Poporon Networkはもともと筆者 (laminne) による一人サークルで，
 
 これまでに Poporon Network が開発したものについて，簡単に紹介します．
 
-ToDo
+### KOJS (2022-2023)
+
+- 開発期間: 2022.12~2023.07
+- 使用技術:
+  - フロントエンド: React, TypeScript
+  - バックエンド: Go，Docker SDK
+
+Poporon Network 設立のきっかけの一つとなったプロジェクト．  
+競技プログラミングのプラットフォームで，複数のコンポーネントから構成されるかなり大規模で複雑なものでした．  
+このとき得られたソフトウェア設計の知見が以後のプロジェクトに生かされています．
+
+### kaniwriter/kanicc (2023-)
+
+- 開発期間: 2023.10~現在
+- 使用技術:
+  - kaniwriter: React, Web Serial API
+  - kanicc: Deno, mruby compiler
+
+mruby/c で書かれたコードをマイコンに転送するためのツール，およびそのバックエンド．  
+
+
+Web Serial APIを利用してmruby/cの標準書き込みプロトコルである mrbwrite を実装し，マイコンへのプログラムの転送，プログラムの起動とログの表示をブラウザ上で完結させることに成功しました．
+
+### kcms/kcmsf (2023-)
+
+- 開発期間: 2023.12~現在
+- 使用技術:
+  - kcms:  Hono
+  - kcmsf: React
+
+島根県松江市で開催されている [Matz葉がにロボコン](https://www.shimane-oss.org/kanirobo) で利用するために開発されたロボットコンテストの当日運営支援システム．  
+
+
