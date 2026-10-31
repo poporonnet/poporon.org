@@ -13,7 +13,7 @@ importers:
         version: 0.9.12(@emnapi/runtime@1.11.3)(prettier-plugin-astro@0.14.1)(prettier@3.9.10)(typescript@5.9.3)
       '@iconify-json/tabler':
         specifier: ^1.2.16
-        version: 1.2.42
+        version: 1.2.43
       '@tailwindcss/vite':
         specifier: ^4.0.5
         version: 4.3.3(vite@8.3.5(@types/node@25.0.3)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
@@ -434,8 +434,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@iconify-json/tabler@1.2.42':
-    resolution: {integrity: sha512-fObaBh/H2zJphk3lS1dWPUf/buuGaCHQXnB4UYgKOPXQub5Ac1qEu0AHRj/0+E2FEl8pWfgM2xQWzfz7ffcY+A==}
+  '@iconify-json/tabler@1.2.43':
+    resolution: {integrity: sha512-EKhyOj6nASi25ZjuRpEhPL1fwiKVtg/e/VX6v6X3FPKpjG9og26ypW8ItnWYSTn6fdNuQe3VPeyuThWlP6QuWw==}
 
   '@iconify/tools@5.0.12':
     resolution: {integrity: sha512-aFPwSFmFphUPVjNLUkgxgUPSPVgTEEjv0mE7NgvfoQBuE5TtsMrKa4HTY65cM5oXZ2a1xKQcW/RKhiOKEiAarw==}
@@ -2397,7 +2397,7 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
-  '@iconify-json/tabler@1.2.42':
+  '@iconify-json/tabler@1.2.43':
     dependencies:
       '@iconify/types': 2.0.0
 
